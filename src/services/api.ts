@@ -3,7 +3,7 @@ import type { Order } from '../types';
 
 // Create axios instance with base configuration
 const api = axios.create({
-  baseURL: 'https://project-tf9e.onrender.com/api',
+  baseURL: 'https://localhost:5000/api',
   headers: {
     'Content-Type': 'application/json',
   },
