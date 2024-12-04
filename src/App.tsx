@@ -10,6 +10,7 @@ import { OrderForm } from './components/order/OrderForm';
 import { AdminPanel } from './components/admin/AdminPanel';
 import { LoginForm } from './components/admin/LoginForm';
 import { ChatBot } from './components/chatbot/ChatBot';
+import { WhatsAppButton } from './components/common/WhatsAppButton';
 import { useAuthStore } from './store/authStore';
 import { FreeDeliveryPopup } from './components/common/FreeDeliveryPopup';
 
@@ -48,6 +49,7 @@ function App() {
             />
           </Routes>
         </main>
+        <WhatsAppButton />
         <ChatBot />
         <FreeDeliveryPopup />
         <Footer />
