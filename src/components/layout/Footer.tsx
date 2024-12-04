@@ -4,7 +4,7 @@ import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react'
 export const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white ">
-      <div className="container mx-auto px-20 py-12">
+      <div className="container mx-auto px-2 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">Dose Tune</h3>
