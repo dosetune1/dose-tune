@@ -8,7 +8,7 @@ export const Header = () => {
 
   return (
     <header className="bg-white shadow-md">
-      <nav className="container mx-auto px-2 py-4">
+      <nav className="container mx-auto px-8 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
             <img src={logo} alt="DoseTune Logo" className="h-16" />
