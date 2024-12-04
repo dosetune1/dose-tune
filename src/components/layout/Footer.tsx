@@ -20,7 +20,7 @@ export const Footer = () => {
               <a href="#" className="text-gray-400 hover:text-white">
                 <Twitter className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://www.instagram.com/dosetune?igsh=bHBrNmUwOGJiYXNi" className="text-gray-400 hover:text-white">
                 <Instagram className="h-6 w-6" />
               </a>
             </div>
