@@ -53,7 +53,7 @@ export const FreeDeliveryPopup = () => {
             <div className="mt-4 flex justify-end">
               <button
                 onClick={handleClose}
-                className="bg-primary text-white z-10 px-4 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-primary transition-colors"
+                className="bg-primary text-white z-10 px-4 py-2 rounded-md text-sm font-medium border-2 border-primary hover:bg-white hover:text-primary transition-colors"
               >
                 Got it!
               </button>
