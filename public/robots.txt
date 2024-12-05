@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://dosetune.vercel.app/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Disallow admin paths
+Disallow: /admin/
+Disallow: /admin/dashboard
+
+# Allow critical pages
+Allow: /order
+Allow: /services
+Allow: /about
+Allow: /contact
