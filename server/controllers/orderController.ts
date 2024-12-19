@@ -18,9 +18,9 @@ export const getAllOrders = async (req: Request, res: Response): Promise<void> =
 export const createOrder = async (req: Request, res: Response): Promise<void> => {
   try {
     // Validate required fields
-    const { customerName, phone, medicines, prescriptionUrl } = req.body;
+    const { customerName, email, phone, medicines, prescriptionUrl } = req.body;
     
-    if (!customerName || !phone || (!medicines.length && !prescriptionUrl)) {
+    if (!customerName || !email || !phone || (!medicines.length && !prescriptionUrl)) {
       res.status(400).json({
         success: false,
         message: 'Missing required fields'
