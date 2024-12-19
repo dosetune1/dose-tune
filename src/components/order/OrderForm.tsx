@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useOrderStore } from '../../store/orderStore';
 import { useNavigate } from 'react-router-dom';
 import { PrescriptionUpload } from './PrescriptionUpload';
+import { TermsModal } from '../common/TermsModal';
 
 interface OrderFormData {
   name: string;
@@ -11,6 +12,7 @@ interface OrderFormData {
   address: string;
   medicines: string;
   prescription?: FileList;
+  acceptTerms: boolean;
 }
 
 export const OrderForm = () => {
@@ -25,8 +27,10 @@ export const OrderForm = () => {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [uploadedFileUrl, setUploadedFileUrl] = React.useState<string | null>(null);
+  const [isTermsModalOpen, setIsTermsModalOpen] = React.useState(false);
 
   const medicines = watch('medicines');
+  const acceptTerms = watch('acceptTerms');
 
   const handleImageUpload = (file: File, url: string) => {
     setUploadedFileUrl(url);
@@ -141,11 +145,30 @@ export const OrderForm = () => {
               />
             </div>
 
+            <div className="flex items-center space-x-2">
+              <input
+                type="checkbox"
+                {...register('acceptTerms', { required: true })}
+                id="acceptTerms"
+                className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+              />
+              <label htmlFor="acceptTerms" className="text-sm text-gray-600">
+                I agree to the{' '}
+                <button
+                  type="button"
+                  onClick={() => setIsTermsModalOpen(true)}
+                  className="text-primary hover:text-primary/80 underline"
+                >
+                  Terms & Conditions
+                </button>
+              </label>
+            </div>
+
             <button
               type="submit"
-              disabled={isSubmitting}
+              disabled={isSubmitting || !acceptTerms}
               className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
-                isSubmitting ? 'bg-primary/70 cursor-not-allowed' : 'bg-primary hover:bg-primary/80'
+                isSubmitting || !acceptTerms ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary hover:bg-primary/80'
               } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-200`}
             >
               {isSubmitting ? 'Submitting...' : 'Submit Order'}
@@ -153,6 +176,11 @@ export const OrderForm = () => {
           </form>
         </div>
       </div>
+
+      <TermsModal
+        isOpen={isTermsModalOpen}
+        onClose={() => setIsTermsModalOpen(false)}
+      />
     </div>
   );
 };
