@@ -9,7 +9,6 @@ export interface Medicine {
 export interface Order {
   _id: string;
   customerName: string;
-  email: string;
   phone: string;
   address: string;
   medicines: string[];
