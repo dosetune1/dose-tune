@@ -73,7 +73,7 @@ export const OrderForm = () => {
                 <label className="block text-sm font-medium text-gray-700">Full Name</label>
                 <input
                   type="text"
-                  {...register('name', { required: 'Name is required' })}
+                  {...register('name')}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
                 />
                 {errors.name && (
@@ -85,7 +85,7 @@ export const OrderForm = () => {
                 <label className="block text-sm font-medium text-gray-700">Phone Number</label>
                 <input
                   type="tel"
-                  {...register('phone', { required: 'Phone number is required' })}
+                  {...register('phone')}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
                 />
                 {errors.phone && (
@@ -97,7 +97,7 @@ export const OrderForm = () => {
             <div>
               <label className="block text-sm font-medium text-gray-700">Delivery Address</label>
               <textarea
-                {...register('address', { required: 'Delivery address is required' })}
+                {...register('address')}
                 rows={3}
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 placeholder="Enter your complete delivery address"
