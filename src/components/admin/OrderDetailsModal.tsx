@@ -26,9 +26,6 @@ export const OrderDetailsModal: React.FC<OrderDetailsModalProps> = ({
               <strong>Customer:</strong> {order.customerName}
             </p>
             <p className="text-sm text-gray-500 mb-2">
-              <strong>Email:</strong> {order.email}
-            </p>
-            <p className="text-sm text-gray-500 mb-2">
               <strong>Phone:</strong> {order.phone}
             </p>
             <p className="text-sm text-gray-500 mb-2">
