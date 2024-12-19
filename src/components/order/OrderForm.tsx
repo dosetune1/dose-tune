@@ -7,7 +7,6 @@ import { TermsModal } from '../common/TermsModal';
 
 interface OrderFormData {
   name: string;
-  email: string;
   phone: string;
   address: string;
   medicines: string;
@@ -46,7 +45,6 @@ export const OrderForm = () => {
     try {
       await addOrder({
         customerName: data.name,
-        email: data.email,
         phone: data.phone,
         address: data.address,
         medicines: medicines ? medicines.split('\n').filter(Boolean) : [],
@@ -95,25 +93,7 @@ export const OrderForm = () => {
                 )}
               </div>
             </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Email</label>
-              <input
-                type="email"
-                {...register('email', {
-                  required: 'Email is required',
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: 'Invalid email address'
-                  }
-                })}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
-              />
-              {errors.email && (
-                <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
-              )}
-            </div>
-
+            
             <div>
               <label className="block text-sm font-medium text-gray-700">Delivery Address</label>
               <textarea
