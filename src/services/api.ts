@@ -3,7 +3,7 @@ import type { Order } from '../types';
 
 // Create axios instance with base configuration
 const api = axios.create({
-  baseURL: 'https://dose-tune.onrender.com/api',
+  baseURL: 'https://dose-tune-baxl.onrender.com',
   headers: {
     'Content-Type': 'application/json',
   },
